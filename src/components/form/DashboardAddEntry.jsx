@@ -19,12 +19,12 @@ const displayingErrorMessagesSchema = Yup.object().shape({
 })
 
 const DashboardAddEntry = () => {
-  const { addDatas } = useContext(AppContext)
+  const { adddataList } = useContext(AppContext)
 
   //s'applique quand on appuie sur le btn de validation
   const handleFormSubmit = useCallback(
     (values, { resetForm }) => {
-      addDatas({
+      adddataList({
         amount: Number(values.amount),
         description: values.description,
       })
@@ -32,7 +32,7 @@ const DashboardAddEntry = () => {
 
       return true
     },
-    [addDatas]  //modifier le nom des constantes 
+    [adddataList] //modifier le nom des constantes
   )
 
   return (
@@ -63,10 +63,10 @@ const DashboardAddEntry = () => {
             touchedType={touched.description}
           />
           <button
-            className="w-full p-2 text-white bg-gray-700 hover:bg-gray-400 transition-all"
+            className="w-full p-2 text-white bg-black transition-all hover:font-bold"
             type="submit"
           >
-            Ajouter
+            Ajouter une entrée
           </button>
         </Form>
       )}

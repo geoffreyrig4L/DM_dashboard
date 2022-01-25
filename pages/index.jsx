@@ -1,5 +1,13 @@
+import React from "react"
+import Dashboard from "../src/components/Dashboard"
+import Layout from "../src/components/Layout"
 
-
-export default function Home() {
-  
+const Home = () => {
+  return (
+    <Layout>
+      <Dashboard />
+    </Layout>
+  )
 }
+
+export default Home
